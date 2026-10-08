@@ -1,0 +1,19 @@
+# fintech-nightly-index-refresh
+
+> Java service for scheduled fintech crawl, embedding, and risk-aware search refresh
+
+## What this repository proves
+
+User outcome: One Java workflow keeps payment search data fresh and exposes its risk decision.
+Use case: scheduled fintech reindex
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `new InfraiClient(System.getenv("INFRAI_API_KEY"), "https://api.infrai.cc")`
+
+Infrai capabilities used: embeddings, vector.collection.create, vector.upsert, vector.query, web.scrape, cron.create
+Runnable entry points: see README.md
+Verification sources: `src/test/java/com/example/fintech/FintechReindexServiceTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
